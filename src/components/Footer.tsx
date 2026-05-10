@@ -1,4 +1,5 @@
 import { Phone, MapPin, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -6,12 +7,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-8">
+            <Link to="/" className="flex items-center gap-2 mb-8">
               <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center text-white">
                 <span className="text-xs font-black">KS</span>
               </div>
               <span className="text-xl font-bold text-white tracking-tight">기산노인복지센터</span>
-            </a>
+            </Link>
             <p className="text-sm leading-relaxed mb-8">
               사람 중심의 따뜻한 돌봄으로 어르신의 행복한 노후를 함께합니다. 정직하고 투명한 운영을 실천하는 최우수 장기요양기관입니다.
             </p>
@@ -27,23 +28,23 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-bold mb-6">빠른 메뉴</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#about" className="hover:text-white transition-colors">센터소개</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">사업소개</a></li>
-              <li><a href="#guide" className="hover:text-white transition-colors">이용안내</a></li>
-              <li><a href="#notice" className="hover:text-white transition-colors">공지사항</a></li>
-              <li><a href="#location" className="hover:text-white transition-colors">오시는길</a></li>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><Link to="/#about" className="hover:text-white transition-colors">센터소개</Link></li>
+              <li><Link to="/#services" className="hover:text-white transition-colors">사업소개</Link></li>
+              <li><Link to="/#guide" className="hover:text-white transition-colors">이용안내</Link></li>
+              <li><Link to="/community" className="hover:text-white transition-colors">공지사항</Link></li>
+              <li><Link to="/location" className="hover:text-white transition-colors">오시는길</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">주요 서비스</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">방문요양 서비스</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">주야간 보호 서비스</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">방문목욕 서비스</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">장기요양등급 신청안내</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">복지구구 대여 서비스</a></li>
+              <li><Link to="/#services" className="hover:text-white transition-colors">방문요양 서비스</Link></li>
+              <li><Link to="/#services" className="hover:text-white transition-colors">주야간 보호 서비스</Link></li>
+              <li><Link to="/#services" className="hover:text-white transition-colors">방문목욕 서비스</Link></li>
+              <li><Link to="/#guide" className="hover:text-white transition-colors">장기요양등급 신청안내</Link></li>
+              <li><Link to="/#services" className="hover:text-white transition-colors">복지구구 대여 서비스</Link></li>
             </ul>
           </div>
 
@@ -82,12 +83,13 @@ export default function Footer() {
             <a href="#" className="hover:text-white text-slate-300">개인정보처리방침</a>
             <a href="#" className="hover:text-white font-bold text-slate-300">이메일무단수집금지</a>
             <div className="w-[1px] h-3 bg-slate-700"></div>
-            <a href="/admin" className="hover:text-brand-primary transition-colors flex items-center gap-1">
+            <Link to="/admin" className="hover:text-brand-primary transition-colors flex items-center gap-1">
               <span className="opacity-50">Admin</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

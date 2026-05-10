@@ -91,10 +91,10 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item)}
+                to={item.href}
+                onClick={(e) => handleNavClick(e as any, item)}
                 className={`px-4 py-2 text-sm font-bold rounded-xl transition-all ${
                   scrolled 
                   ? 'text-slate-600 hover:text-brand-primary hover:bg-slate-100' 
@@ -102,7 +102,7 @@ export default function Header() {
                 } ${location.pathname === item.href ? 'text-brand-primary bg-slate-50' : ''}`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="h-6 w-[1px] bg-slate-200 mx-4 hidden lg:block"></div>
             <a
@@ -137,14 +137,14 @@ export default function Header() {
           >
             <div className="space-y-1">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item)}
+                  to={item.href}
+                  onClick={(e) => handleNavClick(e as any, item)}
                   className="block px-6 py-4 text-base font-bold text-slate-700 hover:text-brand-primary hover:bg-slate-50 rounded-2xl transition-all"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <hr className="my-4 border-slate-100" />
               <a
