@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "Post": {
+      "title": "게시글",
+      "description": "커뮤니티 및 공지사항 게시글",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "author": { "type": "string" },
+        "category": { "type": "string", "enum": ["notice", "community", "diet", "activity"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["title", "content", "category", "createdAt"]
+    }
+  },
+  "firestore": {
+    "posts": {
+      "schema": "Post",
+      "description": "게시글 컬렉션"
+    }
+  }
+}
